@@ -4,10 +4,13 @@ sources:
   - name: jaffle_shop
     database: dbt-tutorial
     schema: jaffle_shop
+    description: A clone of the Postgress app database
     tables:
       - name: orders
+        description: Raw orders data
         columns:
           - name: id
+            description: Primary key for orders data
             data_tests:
               - unique
               - not_null
@@ -21,8 +24,10 @@ sources:
               period: day
           loaded_at_field: _etl_loaded_at
       - name: customers
+        description: Raw customers data
         columns:
           - name: id
+            description: Primary key for customers data
             data_tests:
               - unique
               - not_null
